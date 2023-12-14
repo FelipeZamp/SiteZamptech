@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}Alterar Fornecedor{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Alterar Fornecedor</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_fornecedor" value="{{ fornecedor.id }}">
+        <div class="form-floating mb-3">
+            <input type="text" name="nome" id="nome" class="form-control" placeholder=" " value="{{ fornecedor.nome }}" required autofocus>
+            <label for="nome">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="endereco" id="endereco" class="form-control" placeholder=" " value="{{ fornecedor.endereco }}">
+            <label for="endereco">Endereço</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="telefone" id="telefone" class="form-control" placeholder=" " value="{{ fornecedor.telefone }}">
+            <label for="telefone">Telefone</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="email" id="email" class="form-control" placeholder=" " value="{{ fornecedor.email }}">
+            <label for="email">Email</label>
+        </div>
+        <div>
+            <a href="/fornecedor" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}Excluir Serviço{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Excluir Serviço</h1>
+    <hr>
+    <p class="lead">
+        Deseja realmente excluir o servico <b>{{ servico.nome }}</b>?
+    </p>
+    <p>
+        <img src="/static/img/servicos/{{ '{:04d}'.format(servico.id) }}.jpg" alt="{{ servico.nome }}" class="img-thumbnail" width="128">
+    </p>
+    <form method="post">
+        <input type="hidden" name="id_servico" value="{{ servico.id }}">
+        <div>
+            <a href="/servico" class="btn btn-success">Não</a>
+            <button type="submit" class="btn btn-danger">Sim</button>
+        </div>
+    </form>
+{% endblock %}

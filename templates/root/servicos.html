@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block titulo %}Servicos{% endblock %}
+{% block principal %}
+
+<body class="bg-dark text-white">
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-dark text-white">
+              <h3 class="mb-0">Serviços de Assistência Técnica</h3>
+            </div>
+            <div class="card-body">
+              <p>A nossa assistência técnica de informática oferece uma variedade de serviços para atender às suas necessidades. Abaixo estão alguns dos principais serviços que prestamos:</p>
+    
+              <ul>
+                <li>Reparo de hardware e software</li>
+                <li>Atualização de sistema operacional</li>
+                <li>Remoção de vírus e malware</li>
+                <li>Recuperação de dados perdidos</li>
+                <li>Instalação e configuração de software</li>
+                <li>Configuração de redes e Wi-Fi</li>
+              </ul>
+    
+              <p>Nossa equipe altamente qualificada está pronta para ajudar a resolver qualquer problema que você possa ter com seus dispositivos e computadores.</p>
+    
+              <hr>
+              {% if not usuario: %}
+
+              <a href="/login">Faça login para realizar um chamado</a>
+
+              {% endif %}
+
+              {% if usuario: %}
+              <h4>Abrir Chamado de Serviço</h4>
+    
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nome:</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail:</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu endereço de e-mail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="serviceType" class="form-label">Tipo de Serviço:</label>
+                  <select class="form-control" id="serviceType" name="serviceType" required>
+                    <option value="" disabled selected>Selecione o tipo de serviço</option>
+                    <option value="Reparo">Reparo</option>
+                    <option value="Atualização">Atualização</option>
+                    <option value="Remoção de Vírus">Remoção de Vírus</option>
+                    <option value="Recuperação de Dados">Recuperação de Dados</option>
+                    <option value="Instalação de Software">Instalação de Software</option>
+                    <option value="Configuração de Rede">Configuração de Rede</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Descrição do Problema:</label>
+                  <textarea class="form-control" id="description" name="description" rows="5" placeholder="Descreva o problema que está enfrentando" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Abrir Chamado</button>
+              </form>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</body>
+
+{% endblock %}

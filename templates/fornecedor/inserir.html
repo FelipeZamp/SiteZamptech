@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inserir Fornecedor{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Inserir Fornecedor</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-floating mb-3">
+            <input type="text" name="nome" id="nome" class="form-control" placeholder=" ">
+            <label for="nome">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="endereco" id="endereco" class="form-control" placeholder=" ">
+            <label for="endereco">Endereço</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="telefone" id="telefone" class="form-control" placeholder=" ">
+            <label for="telefone">Telefone</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="email" id="email" class="form-control" placeholder=" ">
+            <label for="email">Email</label>
+        </div>
+        <div>
+            <a href="/fornecedor" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+
+{% endblock %}

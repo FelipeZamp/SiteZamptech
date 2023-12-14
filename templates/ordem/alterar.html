@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block titulo %}Alterar Ordem de Serviço{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Alterar Ordem de Serviço</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id_ordem" value="{{ ordem.id }}">
+        <div class="form-floating mb-3">
+            <input type="text" name="cliente" id="cliente" class="form-control" placeholder=" " value="{{ ordem.cliente }}">
+            <label for="cliente">Cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="servico" id="servico" class="form-control" placeholder=" " value="{{ ordem.servico }}">
+            <label for="servico">Serviço</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="status" id="status" class="form-control" placeholder=" " value="{{ ordem.status }}">
+            <label for="status">Status</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="desc" id="desc" class="form-control" placeholder=" " value="{{ ordem.desc }}">
+            <label for="desc">Descrição</label>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="arquivoImagem" class="form-label">Selecione o Arquivo de Imagem</label>
+            <input class="form-control" type="file" id="arquivoImagem" name="arquivoImagem" onchange="previewImage(event)" accept="image/jpeg">
+        </div>
+        <div>
+            <a href="/ordem" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+    <div class="col-3">
+        <img id="preview" src="/static/img/ordens/{{ '{:04d}'.format(ordem.id) }}.jpg" class="border border-2 rounded rounded-3 p-2 w-100" />
+    </div>
+    <script>
+        function previewImage(event) {
+            let reader = new FileReader();
+            reader.onload = function () {
+                let preview = document.getElementById('preview');
+                preview.src = reader.result;
+                preview.classList.remove('d-none');
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+{% endblock %}

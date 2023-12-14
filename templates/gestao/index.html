@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block titulo %}Gestão Zamptech{% endblock %}
+{% block principal %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Gestão Zamptech</h1>
+
+    <div class="row">
+        <div class="col-md-2 bg-white text-center p-3 m-3">
+            <h2 class="h5 text-left text-dark">Ordens de Serviço</h2>
+            <a href="/ordem" class="btn btn-dark mx-auto">Visualizar</a>
+        </div>
+        <div class="col-md-2 bg-white text-center p-3 m-3">
+            <h2 class="h5 text-left text-dark">Clientes</h2>
+            <a href="/cliente" class="btn btn-dark mx-auto">Visualizar</a>
+        </div>
+        <div class="col-md-2 bg-white text-center p-3 m-3">
+            <h2 class="h5 text-left text-dark">Serviços</h2>
+            <a href="/servico" class="btn btn-dark mx-auto">Visualizar</a>
+        </div>
+    
+        <div class="col-md-2 bg-white text-center p-3 m-3">
+            <h2 class="h5 text-left text-dark">Produtos</h2>
+            <a href="/produto" class="btn btn-dark mx-auto">Visualizar</a>
+        </div>
+        <div class="col-md-2 bg-white text-center p-3 m-3">
+            <h2 class="h5 text-left text-dark">Fornecedores</h2>
+            <a href="/fornecedor" class="btn btn-dark mx-auto">Visualizar</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

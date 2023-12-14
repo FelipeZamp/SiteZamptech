@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block titulo %}Contato{% endblock %}
+{% block principal %}
+
+<div class="container mt-5 mb-4">    
+    <div class="row bg-dark rounded border border-white mb-4 p-2">
+      <div class="col-md-6">
+        <h4>Informações de Contato:</h4>
+        <p class="mb-4"><strong>Endereço:</strong><br>
+          Rua Manoel Pereira Martins, 58<br>
+          Bairro Boa Vista<br>
+          Cachoeiro de Itapemirim, Espírito Santo
+        </p>
+        <p class="mb-4"><strong>Telefone:</strong><br>
+          (28) 99982-2196
+        </p>
+        <p class="mb-4"><strong>E-mail:</strong><br>
+          <a href="mailto:atendimento@assistenciatecnica.com">contato@zamptech.com.br</a>
+        </p>
+      </div>
+
+      <div class="col-md-6 ">
+        <h4>Horário de Atendimento:</h4>
+        <p class="mb-4"><strong>Segunda a Sexta:</strong><br>
+          8:00h - 18:00h
+        </p>
+        <p class="mb-4"><strong>Sábado:</strong><br>
+          9:00h - 13:00h
+        </p>
+        <p class="mb-4"><strong>Domingo:</strong><br>
+          Fechado
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Formulário em uma coluna -->
+      <div class="col-md-6 bg-dark rounded border border-white">
+        <div class="mt-4">
+          <h4>Formulário de Contato:</h4>
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email" placeholder="Seu E-mail">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone:</label>
+              <input type="text" class="form-control" id="telefone" placeholder="Seu Telefone">
+            </div>
+            <div class="mb-3">
+              <label for="assunto" class="form-label">Assunto:</label>
+              <input type="text" class="form-control" id="assunto" placeholder="Assunto da Mensagem">
+            </div>
+            <div class="mb-3">
+              <label for="mensagem" class="form-label">Mensagem:</label>
+              <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua Mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <h4>Redes Sociais:</h4>
+        <p>Conecte-se conosco nas redes sociais para receber as últimas atualizações, dicas e notícias sobre tecnologia:</p>
+        <a href="#" class="btn btn-outline-primary me-2">Facebook</a>
+        <a href="#" class="btn btn-outline-danger">Instagram</a>
+      </div>
+    </div>
+
+    <div class="mt-4 mb-4">
+      <h4>Como Chegar:</h4>
+      <p>Se precisar nos visitar, utilize o mapa abaixo para encontrar o caminho até nossa assistência técnica.</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.4532776929614!2d-41.1785822637384!3d-20.83547954568908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ea0a40ead055f9f%3A0xe3151d726db4d83f!2sZamptech!5e0!3m2!1spt-BR!2sbr!4v1700520207814!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</body>
+
+{% endblock %}

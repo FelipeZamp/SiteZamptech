@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ordem de Serviço{% endblock %}
+
+{% block principal %}
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="display-6 m-0">Ordem de Serviço</h1>
+    <a href="/ordem/inserir" class="btn btn-primary">Novo</a>
+</div>
+<hr>
+
+{% if ordens|length == 0 %}
+    <h4>Nenhuma ordem cadastrada.</h4>
+{% else %}
+    <table class="table table-striped table-sm primeira-centralizada ultimacentralizada">
+        <thead>
+            <tr>
+                <th class="text-bg-dark"></th>
+                <th class="text-bg-dark">Id</th>
+                <th class="text-bg-dark">Cliente</th>
+                <th class="text-bg-dark">Serviço</th>
+                <th class="text-bg-dark">Status</th>
+                <th class="text-bg-dark">Descrição</th>
+                <th class="text-bg-dark">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for o in ordens %}
+                <tr>
+                    <td>
+                        <img src="/static/img/ordens/{{ '{:04d}'.format(o.id) }}.jpg" class="border border-1 rounded rounded-1" height="48" />
+                    </td>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.cliente }}</td>
+                    <td>{{ o.servico }}</td>
+                    <td>{{ o.status }}</td>
+                    <td>{{ o.desc }}</td>
+                    <td>
+                        <a href="/ordem/alterar/{{o.id}}" class="btn btn-secondary btn-sm">
+                            <i class="bi bi-pencil">Alterar</i>
+                        </a>
+                        <a href="/ordem/excluir/{{o.id}}" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash">Exluir</i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<a href="/gestao" class="btn btn-primary btn-sm">
+    <i>Voltar</i>
+</a>
+{% endblock %}

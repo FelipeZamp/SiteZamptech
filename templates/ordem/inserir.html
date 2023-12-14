@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inserir Ordem de Serviço{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Inserir Ordem de Serviço</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-floating mb-3">
+            <input type="text" name="cliente" id="cliente" class="form-control" placeholder=" ">
+            <label for="cliente">Cliente</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="servico" id="servico" class="form-control" placeholder=" ">
+            <label for="servico">Serviço</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="status" id="status" class="form-control" placeholder=" ">
+            <label for="status">Status</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="desc" id="desc" class="form-control" placeholder=" ">
+            <label for="desc">Descrição</label>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="arquivoImagem" class="form-label">Selecione o Arquivo de Imagem</label>
+            <input class="form-control" type="file" id="arquivoImagem" name="arquivoImagem" onchange="previewImage(event)" accept="image/jpeg" required>
+        </div>
+        <div>
+            <a href="/ordem" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </form>
+    <div class="col-3">
+        <img id="preview" src="" class="border border-2 rounded rounded-3 p-2 w100 d-none" />
+    </div>
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var preview = document.getElementById('preview');
+                preview.src = reader.result;
+                preview.classList.remove('d-none');
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+{% endblock %}

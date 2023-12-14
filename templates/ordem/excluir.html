@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}Excluir Ordem de Serviço{% endblock %}
+
+{% block principal %}
+    <h1 class="display-6">Excluir Ordem de Serviço</h1>
+    <hr>
+    <p class="lead">
+        Deseja realmente excluir a ordem <b>{{ ordem.id }}</b>?
+    </p>
+    <p>
+        <img src="/static/img/ordens/{{ '{:04d}'.format(ordem.id) }}.jpg" alt="{{ ordem.nome }}" class="img-thumbnail" width="128">
+    </p>
+    <form method="post">
+        <input type="hidden" name="id_ordem" value="{{ ordem.id }}">
+        <div>
+            <a href="/ordem" class="btn btn-success">Não</a>
+            <button type="submit" class="btn btn-danger">Sim</button>
+        </div>
+    </form>
+{% endblock %}
